@@ -15,7 +15,7 @@ import { ApplinkComponent } from './components/applink/applink.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ConbinanceAppComponent } from './conbinance-app.component';
+import { CoinbinanceAppComponent } from './coinbinance-app.component';
 import { Routes, RouterModule } from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
@@ -23,20 +23,17 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 const routes: Routes= 
 [
   {
-    path:'',component:ConbinanceAppComponent,
+    path:'',component:CoinbinanceAppComponent,
     children:[
               { path:':id', component:TopmenuComponent },
               { path:'',component:TopmenuComponent }
             ]
-  },
-  { 
-    path:'', redirectTo:''
   }
 ];
 
 
 @NgModule({
-  declarations: [ToolbarComponent, TopmenuComponent, SidemenuComponent, NotificationComponent, CardtopComponent, AdvtopComponent, AdvbottomComponent, AdvleftComponent, AdvrightComponent, CoinlistComponent, NewsComponent, ApplinkComponent, SidebarComponent, SidenavComponent, FooterComponent],
+  declarations: [ CoinbinanceAppComponent, ToolbarComponent, TopmenuComponent, SidemenuComponent, NotificationComponent, CardtopComponent, AdvtopComponent, AdvbottomComponent, AdvleftComponent, AdvrightComponent, CoinlistComponent, NewsComponent, ApplinkComponent, SidebarComponent, SidenavComponent, FooterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
