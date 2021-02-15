@@ -3,8 +3,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 @Component({
   selector: 'app-coinbinance-app',
   templateUrl: './coinbinance-app.component.html',  
-  styles: [
-  ]
+  styleUrls: ['./coinbinance-app.component.scss']
 })
 export class CoinbinanceAppComponent implements OnInit {
 

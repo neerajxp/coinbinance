@@ -18,6 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CoinbinanceAppComponent } from './coinbinance-app.component';
 import { Routes, RouterModule } from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { MaterialModule } from '../shared/material.module';
+ 
 
 
 const routes: Routes= 
@@ -35,7 +37,8 @@ const routes: Routes=
 @NgModule({
   declarations: [ CoinbinanceAppComponent, ToolbarComponent, TopmenuComponent, SidemenuComponent, NotificationComponent, CardtopComponent, AdvtopComponent, AdvbottomComponent, AdvleftComponent, AdvrightComponent, CoinlistComponent, NewsComponent, ApplinkComponent, SidebarComponent, SidenavComponent, FooterComponent],
   imports: [
-    CommonModule,
+    CommonModule, 
+    MaterialModule,
     RouterModule.forChild(routes)
   ]
 })
