@@ -1,6 +1,34 @@
 section {
     display: table;
   }
+
+  .flex-main-container{    
+    display:flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+    justify-content: space-around;    
+  }
+
+  .flex-main-container-1{    
+    display:flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: space-around;    
+  }
+
+  .flex-main-item{
+    flex:1,1,auto;///grow, shrink, basis
+    //flex-grow: 2;
+    //width: 100%;
+    // height: 150px;
+     //margin-top: 25px;
+    // background: tomato;
+    //color: white;
+    // font-weight: bold;
+    // font-size: 3em;
+    // text-align: center;
+    // line-height: 150px;
+  }
   
   .example-label {
     display: table-cell;

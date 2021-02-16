@@ -1,8 +1,15 @@
-<app-notification></app-notification>
-<app-topmenu></app-topmenu>
-<app-sidenav></app-sidenav>
+
+<div class="flex-main-container">
+  <app-notification></app-notification>
+  <app-topmenu></app-topmenu>
+  <app-cardtop></app-cardtop>
+   <div class="flex-main-container-1">
+      <div class="flex-main-item"><app-sidebar></app-sidebar></div>
+      <div class="flex-main-item"><app-sidenav></app-sidenav></div>
+      <div class="flex-main-item"><app-news></app-news></div>
+  </div>
+  <div><mat-divider></mat-divider></div>
+  <div><app-applink></app-applink></div>
+  <div><app-footer></app-footer></div>
+</div>
  
-  <mat-divider></mat-divider>
-<app-applink></app-applink>
-<app-footer></app-footer>
-  
