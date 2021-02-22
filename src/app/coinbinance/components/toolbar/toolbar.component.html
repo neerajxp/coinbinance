@@ -1,3 +1,34 @@
+ <div style="background-color: paleturquoise;"> 
+   <section>
+       <!-- <div class="example-label">Mini FAB</div> -->
+       <div class="example-button-row">
+         <div class="example-flex-container">
+           <div class="example-button-container">
+             <button mat-mini-fab color="primary" aria-label="button with a menu icon">
+                <mat-icon>build</mat-icon>  
+             </button>
+           </div>
+           <div class="example-button-container">
+             <button mat-mini-fab color="accent" aria-label="button with a plus one icon">
+               <mat-icon>language</mat-icon>
+             </button>
+           </div>
+           <div class="example-button-container">
+             <button mat-mini-fab color="warn" aria-label="button with filter list icon">
+               <mat-icon>swap_horiz</mat-icon>
+             </button>
+           </div>
+         
+           <div class="example-button-container">
+             <button mat-mini-fab  aria-label="warn icon">
+               <mat-icon matBadge="15" >home</mat-icon>
+             </button>
+           </div>
+         </div>
+       </div>
+     </section>
+</div>
+
 <nav mat-tab-nav-bar [backgroundColor]="background">
     <a style="align-content: center;" mat-tab-link *ngFor="let link of links"
        (click)="activeLink = link"
