@@ -11,11 +11,12 @@ export class SidenavComponent implements AfterViewInit    {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  //@ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+    //this.dataSource.paginator = this.paginator;
+
+ }
 
 }
 

@@ -39,6 +39,7 @@ const routes: Routes=
   imports: [
     CommonModule, 
     MaterialModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ]
 })
