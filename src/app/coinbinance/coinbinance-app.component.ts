@@ -12,10 +12,9 @@ export class CoinbinanceAppComponent implements OnInit {
   apiurl="";
   
   ngOnInit(): void {
-     let obs=this.http.get("https://coinfn1.azurewebsites.net/api/HttpTrigger?code=n8W46TK6PIJAaMvDhRLSTdFjYIGV0P9S7agFnsWATi7TIPbtOORaCQ==",
-     {headers: new HttpHeaders().set("X-CMC_PRO_API_KEY","2563a5a6-1274-4943-b0b4-da724381039c")});
+    //let obs=this.http.get("https://coinfn1.azurewebsites.net/api/HttpTrigger?code=n8W46TK6PIJAaMvDhRLSTdFjYIGV0P9S7agFnsWATi7TIPbtOORaCQ==");
 
-     obs.subscribe((resp)=>console.log(resp));
+     //obs.subscribe((resp)=>console.log(resp));
   }
 
 }

@@ -1,23 +1,39 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements AfterViewInit    {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  
-  //@ViewChild(MatPaginator) paginator: MatPaginator;
+export class SidenavComponent implements AfterViewInit    
+{
+    constructor(private http: HttpClient) { }  
 
-  ngAfterViewInit() {
-    //this.dataSource.paginator = this.paginator;
+    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+    dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+    
+    // displayedColumns: string[] = ['id', 'name', 'symbol'];
+    // dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
- }
+    ngAfterViewInit() {
+      //this.dataSource.paginator = this.paginator; 
+  }
 
+  loadcoin():void
+  {
+    let obs=this.http.get("https://coinfn1.azurewebsites.net/api/HttpTrigger?code=n8W46TK6PIJAaMvDhRLSTdFjYIGV0P9S7agFnsWATi7TIPbtOORaCQ==");
+    obs.subscribe((resp)=>console.log(resp));
+    
+  }
+}
+
+export interface CoinsElement {
+  id: number;
+  name: string; 
+  symbol: string;
 }
 
 export interface PeriodicElement {
