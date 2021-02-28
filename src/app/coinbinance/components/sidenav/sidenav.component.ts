@@ -21,7 +21,7 @@ export class SidenavComponent implements AfterViewInit
   // dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
    dataSource = new MatTableDataSource<CoinList>(ELEMENT_DATA_COINS);
  
-  displayedColumns: string[] = ['id', 'name', 'symbol', 'price'];
+  displayedColumns: string[] = ['name', 'symbol', 'price', "percent_change_24h"];
   
     constructor(private http: HttpClient, private apiService: ApiService) 
     {  
@@ -43,7 +43,20 @@ export class SidenavComponent implements AfterViewInit
       map((data:any)=>
         data.map(
           (item:any)=>
-          new CoinList(item.id, item.name, item.symbol, item.price)
+          new CoinList(
+              item.source, 
+              item.id, 
+              item.name, 
+              item.symbol, 
+              item.price, 
+              item.last_updated,
+              item.volume_24h, 
+              item.percent_change_1h, 
+              item.percent_change_24h,
+              item.percent_change_7d, 
+              item.percent_change_30d, 
+              item.market_cap, 
+              item.rank)
         )
       )
     ).subscribe(data=>{
