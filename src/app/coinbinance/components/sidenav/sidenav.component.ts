@@ -6,7 +6,8 @@ import {DataSource} from '@angular/cdk/collections';
 import { ApiService } from 'src/app/services/apiservice.service';
 import { Observable, of }   from 'rxjs';
 import { CoinList } from 'src/app/model/coinlist';
-import { map } from 'rxjs/operators'; 
+import { map } from 'rxjs/operators';  
+
 import { CoinlistComponent } from '../coinlist/coinlist.component';
 import { CompileSummaryKind } from '@angular/compiler';
 import {Model1} from '../../../model/model1';
@@ -17,14 +18,10 @@ import {Model1} from '../../../model/model1';
 })
 export class SidenavComponent implements AfterViewInit    
 {
-  private serviceUrl = 'https://coinfn1.azurewebsites.net/api/HttpTrigger?code=n8W46TK6PIJAaMvDhRLSTdFjYIGV0P9S7agFnsWATi7TIPbtOORaCQ==';
-  
-    models1:Model1[]=[];
-
-   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  //dataSource = new UserDataSource(this.apiService);
-  //dataSource = new UserDataSourceCB();
-  displayedColumns: string[] = ['id', 'name', 'symbol'];
+  // dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+   dataSource = new MatTableDataSource<CoinList>(ELEMENT_DATA_COINS);
+ 
+  displayedColumns: string[] = ['id', 'name', 'symbol', 'price'];
   
     constructor(private http: HttpClient, private apiService: ApiService) 
     {  
@@ -34,97 +31,27 @@ export class SidenavComponent implements AfterViewInit
     ngAfterViewInit() {
       //this.dataSource.paginator = this.paginator; 
     }
-    
-    rawdata:CoinList[]=[];
+
+ 
   loadcoin(): void
   {
-  const serviceUrl = 'https://coinfn1.azurewebsites.net/api/HttpTrigger?code=n8W46TK6PIJAaMvDhRLSTdFjYIGV0P9S7agFnsWATi7TIPbtOORaCQ==';
-  const testUrl = 'https://api.github.com/users/mralexgray/repos';
+    const serviceUrl = 'https://coinfn1.azurewebsites.net/api/GetCoinList?code=m/nSeXha7bc8toDseuKYaFBCB56zf96l6XgAx59iRp0gRblFX2kXjA=='; 
   
-     //console.log(this.dataSource);
-    // let obs=this.http.get("https://coinfn1.azurewebsites.net/api/HttpTrigger?code=n8W46TK6PIJAaMvDhRLSTdFjYIGV0P9S7agFnsWATi7TIPbtOORaCQ==");
-    // obs.subscribe((resp)=>console.log(resp));
-
-    // this.http.get("https://coinfn1.azurewebsites.net/api/HttpTrigger?code=n8W46TK6PIJAaMvDhRLSTdFjYIGV0P9S7agFnsWATi7TIPbtOORaCQ==")
-    // .subscribe(data=>{
-    //     this.displayedColumns=data as string[];        
-    // })
-    // console.log(this.displayedColumns);
-
-
-    //return of([]);
-     //let x= new CoinList(1, 'x', 'x');
-
-
      this.http
-    .get<Model1>(testUrl)
+    .get<CoinList>(serviceUrl)
     .pipe(
       map((data:any)=>
         data.map(
           (item:any)=>
-          new Model1(item.id, item.name)
+          new CoinList(item.id, item.name, item.symbol, item.price)
         )
       )
-    ).subscribe((res)=>console.log(res));
-
-    
-    this.http
-    .get<Model1>(serviceUrl)
-    .pipe(
-      map((data:any)=>
-        data.map(
-          (item:any)=>
-          new Model1(1, "2")
-        )
-      )
-    ).subscribe((res)=>console.log(res));
-
-
-     
-
-     
+    ).subscribe(data=>{
+      this.dataSource=data;
+      console.log(data);
+    })     
   }
-}
-
-// export class UserDataSourceCB extends DataSource<any> {
-//   constructor(private http: HttpClient,) {
-//     super();
-//   }
-//   private serviceUrl = 'https://coinfn1.azurewebsites.net/api/HttpTrigger?code=n8W46TK6PIJAaMvDhRLSTdFjYIGV0P9S7agFnsWATi7TIPbtOORaCQ==';
-  
-//   // connect(): Observable<CoinList[]> 
-//   // {
-//   //   //return this.apiService.getCoins();
-    
-//   //   // return this.http.get(this.serviceUrl).pipe(
-//   //   //   map((data:any[])=>data.map((item:any) => new (
-        
-//   //   //   ))
-//   //   // );
-//   //   //obs.subscribe((resp)=>console.log(resp));
-//   //   //return obs;
-//   // }
-
-//   disconnect() 
-//   {
-
-//   }
-// }
-
-export class UserDataSource extends DataSource<any> {
-  constructor(private apiService: ApiService) {
-    super();
-  }
-  connect(): Observable<CoinList[]> 
-  {
-    return this.apiService.getCoins();
-  }
-
-  disconnect() 
-  {
-
-  }
-}
+} 
 
 export interface CoinsElement {
   id: number;
@@ -144,3 +71,5 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {id: 3, name: 'Lithium',symbol: 'Li'},
   {id: 4, name: 'Beryllium',  symbol: 'Be'} 
 ];
+
+const ELEMENT_DATA_COINS: CoinList[] = [];

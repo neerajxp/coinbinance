@@ -3,6 +3,7 @@ export class CoinList {
     public id: number,
     public name: string,
     public symbol: string,
+    public price: number,
     ){}
   }
   
