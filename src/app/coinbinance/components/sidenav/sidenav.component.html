@@ -1,5 +1,7 @@
-<p>sidenav works!</p>
-<button mat-button (click)="loadcoin()">Load</button>
+<button mat-button (click)="loadcoin()" mat-mini-fab color="primary" aria-label="button with a menu icon" >
+  <mat-icon>refresh</mat-icon>
+</button>
+
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource">
 

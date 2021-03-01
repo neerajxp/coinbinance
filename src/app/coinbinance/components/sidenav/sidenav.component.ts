@@ -30,6 +30,7 @@ export class SidenavComponent implements AfterViewInit
    
     ngAfterViewInit() {
       //this.dataSource.paginator = this.paginator; 
+      this.loadcoin();
     }
 
  
