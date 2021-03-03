@@ -20,8 +20,6 @@ import { Routes, RouterModule } from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { MaterialModule } from '../shared/material.module';
  
-
-
 const routes: Routes= 
 [
   {

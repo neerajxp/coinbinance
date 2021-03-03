@@ -11,6 +11,9 @@ import { map } from 'rxjs/operators';
 import { CoinlistComponent } from '../coinlist/coinlist.component';
 import { CompileSummaryKind } from '@angular/compiler';
 import {Model1} from '../../../model/model1';
+import { RSSModel } from '../../../model/rssmodel';
+import * as xml2js from 'xml2js';
+
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -31,8 +34,45 @@ export class SidenavComponent implements AfterViewInit
     ngAfterViewInit() {
       //this.dataSource.paginator = this.paginator; 
       this.loadcoin();
+      this.loadnews();
     }
 
+theVergeRssDara: RSSModel = new RSSModel();
+isFeedDataArrived = false;
+// GetRssFeedData() 
+// {
+// this.rssService.theVerge().subscribe(
+// data => {
+// console.log("data : ");
+// let parseString = xml2js.parseString;
+// parseString(data, (err, result: RSSModel) => {
+// this.theVergeRssDara = result;
+// this.isFeedDataArrived = true;
+// }
+// )
+// });
+// }
+
+ 
+
+
+    loadnews():void
+    {
+      const serviceurl="https://coinfn1.azurewebsites.net/api/GetRSSNewsVerge?code=4rmmtP480deJ7doTLVuzpUBhvFSa5CDzq8ehr2kK15Xj5CMm1d5q4g==";
+      
+      this.http
+      .get(serviceurl,  { responseType: 'text' })
+      .subscribe(data=>
+      {
+        let parseString=xml2js.parseString;
+        parseString(data,(err, result:RSSModel)=>{
+          this.theVergeRssDara=result;
+          this.isFeedDataArrived=true;
+          console.log("rss feed");
+          console.log(data);
+        })   
+      })     
+    }
  
   loadcoin(): void
   {
