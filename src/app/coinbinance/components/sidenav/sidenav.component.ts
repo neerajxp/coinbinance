@@ -13,6 +13,7 @@ import { CompileSummaryKind } from '@angular/compiler';
 import {Model1} from '../../../model/model1';
 import { RSSModel } from '../../../model/rssmodel';
 import * as xml2js from 'xml2js';
+import { NewsModel } from 'src/app/model/newsmodel';
 
 @Component({
   selector: 'app-sidenav',
@@ -23,8 +24,10 @@ export class SidenavComponent implements AfterViewInit
 {
   // dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
    dataSource = new MatTableDataSource<CoinList>(ELEMENT_DATA_COINS);
+   dataSourceNews = new MatTableDataSource<NewsModel>(ELEMENT_DATA_NEWS);
  
   displayedColumns: string[] = ['name', 'symbol', 'price', "percent_change_24h"];
+  displayedColumnsNews: string[] = ['id', 'headline', 'newsurl'];
   
     constructor(private http: HttpClient, private apiService: ApiService) 
     {  
@@ -34,7 +37,7 @@ export class SidenavComponent implements AfterViewInit
     ngAfterViewInit() {
       //this.dataSource.paginator = this.paginator; 
       this.loadcoin();
-      this.loadnews();
+      this.loadLatestNews();
     }
 
 theVergeRssDara: RSSModel = new RSSModel();
@@ -55,6 +58,32 @@ isFeedDataArrived = false;
 
  
 
+  loadLatestNews(): void
+  {
+    const serviceUrl = 'https://coinfn1.azurewebsites.net/api/GetRSSNewsVerge?code=4rmmtP480deJ7doTLVuzpUBhvFSa5CDzq8ehr2kK15Xj5CMm1d5q4g=='; 
+
+    this.http
+    .get<NewsModel>(serviceUrl)
+    .pipe(
+      map((data:any)=>
+        data.map(
+          (item:any)=>
+          new NewsModel(item.source, item.id,
+            item.newsource,
+            item.headline,
+            item.content,
+            item.newsurl,
+            item.icon,
+            item.published,
+            item.hrsago,
+            item.keywords)              
+        )
+      )
+    ).subscribe(data=>{
+      this.dataSourceNews=data;
+      console.log(data);
+    })     
+  }
 
     loadnews():void
     {
@@ -127,3 +156,4 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 const ELEMENT_DATA_COINS: CoinList[] = [];
+const ELEMENT_DATA_NEWS: NewsModel[] = [];
