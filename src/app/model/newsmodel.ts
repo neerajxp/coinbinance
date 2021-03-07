@@ -4,14 +4,15 @@ export class NewsModel
     (
     public source: string,
     public id: number,        
-    public newsource: string,
+    public newssource: string,
     public headline: string,
     public content: string,
     public newsurl: string,
     public icon: string,      
-    public published: Date,
+    public published: string,
     public hrsago: number,
     public keywords: string,
+    public author: string,
     ){}         
 }
  
