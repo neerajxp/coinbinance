@@ -27,7 +27,7 @@ export class SidenavComponent implements AfterViewInit
    dataSourceNews = new MatTableDataSource<NewsModel>(ELEMENT_DATA_NEWS);
  
   displayedColumns: string[] = ['name', 'symbol', 'price', "percent_change_24h"];
-  displayedColumnsNews: string[] = ['newssource','icon','headline', 'newsurl', 'author', ];
+  displayedColumnsNews: string[] = ['newssource','thumbnail','headline', 'newsurl', 'author', ];
   
     constructor(private http: HttpClient, private apiService: ApiService) 
     {  
@@ -73,7 +73,7 @@ isFeedDataArrived = false;
             item.headline,
             item.content,
             item.newsurl,
-            item.icon,
+            item.thumbnail,
             item.published,
             item.hrsago,
             item.keywords,
