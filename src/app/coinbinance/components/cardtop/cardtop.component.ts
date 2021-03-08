@@ -34,14 +34,6 @@ export class CardtopComponent implements OnInit {
         id:3,
         title:"ADA",
       }, 
-      {
-        id:4,
-        title:"Monero",
-      }, 
-      {
-        id:5,
-        title:"Uniswap",
-      }, 
     
     ]
   }
