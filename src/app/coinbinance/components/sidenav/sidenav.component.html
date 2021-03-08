@@ -2,6 +2,48 @@
   <mat-icon>refresh</mat-icon>
 </button>
 
+<!-- <div>
+  <ul *ngFor ="let todo of todos">     
+      <mat-card > 
+        <mat-card-subtitle>{{todo.title}}</mat-card-subtitle> 
+      </mat-card> 
+  </ul>
+</div>
+<div> -->
+  <!-- 
+<ng-container *ngFor="let todo of todos">
+   
+    <mat-card >
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>{{todo.title}}</mat-card-subtitle> 
+    </mat-card> 
+ 
+</ng-container>
+</div> -->
+<!-- 
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+     *ngFor="let todo of todos" >
+     <mat-card  class="example-card" >
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>{{todo.title}}</mat-card-subtitle> 
+    </mat-card>     
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+<!-- <div>
+<mat-list *ngFor="let todo of todos">
+  <mat-list-item> 
+    <mat-card >
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>{{todo.title}}</mat-card-subtitle> 
+    </mat-card> 
+  </mat-list-item>
+  <mat-divider></mat-divider>
+   
+</mat-list> 
+</div> -->
+
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource">
 
@@ -44,6 +86,7 @@
   <mat-paginator [pageSize]="2" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
 </div>
+<!-- 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSourceNews">
     <ng-container matColumnDef="newssource">
@@ -76,66 +119,10 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumnsNews"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumnsNews;"></tr>
   </table>
-</div>
+</div> -->
 
+ 
 <br>
 <br>
 
-<!-- 
 
-<mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>Drawer content
-     
-    </mat-drawer> 
-     
-    <mat-drawer-content><section>
-        <div class="example-label">Basic</div>
-        <div class="example-button-row">
-          <button mat-button>Basic</button>
-          <button mat-button color="primary">Primary</button>
-          <button mat-button color="accent">Accent</button>
-          <button mat-button color="warn">Warn</button>
-          <button mat-button disabled>Disabled</button>
-          <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      <section>
-        <div class="example-label">Raised</div>
-        <div class="example-button-row">
-          <button mat-raised-button>Basic</button>
-          <button mat-raised-button color="primary">Primary</button>
-          <button mat-raised-button color="accent">Accent</button>
-          <button mat-raised-button color="warn">Warn</button>
-          <button mat-raised-button disabled>Disabled</button>
-          <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      <section>
-        <div class="example-label">Stroked</div>
-        <div class="example-button-row">
-          <button mat-stroked-button>Basic</button>
-          <button mat-stroked-button color="primary">Primary</button>
-          <button mat-stroked-button color="accent">Accent</button>
-          <button mat-stroked-button color="warn">Warn</button>
-          <button mat-stroked-button disabled>Disabled</button>
-          <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      <section>
-        <div class="example-label">Flat</div>
-        <div class="example-button-row">
-          <button mat-flat-button>Basic</button>
-          <button mat-flat-button color="primary">Primary</button>
-          <button mat-flat-button color="accent">Accent</button>
-          <button mat-flat-button color="warn">Warn</button>
-          <button mat-flat-button disabled>Disabled</button>
-          <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      
-    </mat-drawer-content>
-  </mat-drawer-container> -->

@@ -15,6 +15,15 @@ import { RSSModel } from '../../../model/rssmodel';
 import * as xml2js from 'xml2js';
 import { NewsModel } from 'src/app/model/newsmodel';
 
+export class Todo
+{
+  constructor
+  (
+    public id:number,  
+    public title:string,
+    ) { }
+}
+
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -22,6 +31,8 @@ import { NewsModel } from 'src/app/model/newsmodel';
 })
 export class SidenavComponent implements AfterViewInit    
 {
+  
+
   // dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
    dataSource = new MatTableDataSource<CoinList>(ELEMENT_DATA_COINS);
    dataSourceNews = new MatTableDataSource<NewsModel>(ELEMENT_DATA_NEWS);
@@ -29,34 +40,26 @@ export class SidenavComponent implements AfterViewInit
   displayedColumns: string[] = ['name', 'symbol', 'price', "percent_change_24h"];
   displayedColumnsNews: string[] = ['newssource','thumbnail','headline', 'newsurl', 'author', ];
   
-    constructor(private http: HttpClient, private apiService: ApiService) 
+    constructor(
+      private http: HttpClient,
+      private apiService: ApiService,
+      ) 
     {  
       
     }  
+    ngOnInit()
+    {
+       
+    }
    
-    ngAfterViewInit() {
-      //this.dataSource.paginator = this.paginator; 
+    ngAfterViewInit() {      
       this.loadcoin();
       this.loadLatestNews();
     }
 
-theVergeRssDara: RSSModel = new RSSModel();
-isFeedDataArrived = false;
-// GetRssFeedData() 
-// {
-// this.rssService.theVerge().subscribe(
-// data => {
-// console.log("data : ");
-// let parseString = xml2js.parseString;
-// parseString(data, (err, result: RSSModel) => {
-// this.theVergeRssDara = result;
-// this.isFeedDataArrived = true;
-// }
-// )
-// });
-// }
-
- 
+  theVergeRssDara: RSSModel = new RSSModel();
+  isFeedDataArrived = false;
+  
 
   loadLatestNews(): void
   {

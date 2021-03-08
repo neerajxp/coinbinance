@@ -1,6 +1,30 @@
-<p>Breaking News</p>
-<mat-list role="list">
-    <mat-list-item role="listitem">News 1</mat-list-item>
-    <mat-list-item role="listitem">News 2</mat-list-item>
-    <mat-list-item role="listitem">News 3</mat-list-item>
-  </mat-list>
+<p>News</p> 
+
+  <!-- <div>
+    <ul *ngFor ="let news of dataSourceNews">     
+        <mat-card >
+          <mat-card-title>{{news.headline}}</mat-card-title>
+          <mat-card-subtitle> <img src="{{news.thumbnail}}" width="100px" height="100px" ></mat-card-subtitle> 
+        </mat-card> 
+    </ul>
+  </div> -->
+
+  <div class="mat-elevation-z8 mat-column-headline"  >
+    <table mat-table [dataSource]="dataSourceNews">     
+      <ng-container  matColumnDef="headline">
+        <th mat-header-cell *matHeaderCellDef> headline </th>
+        <td mat-cell *matCellDef="let element"> {{element.headline}} <br><a href="{{element.newsurl}}">Read</a> </td>
+        <br>        
+      </ng-container>
+      
+      <ng-container matColumnDef="thumbnail">
+        <th mat-header-cell *matHeaderCellDef> thumbnail </th>
+        <td mat-cell *matCellDef="let element">  {{element.newssource}} <br> <img src="{{element.thumbnail}}" width="100px" height="100px"></td>
+      </ng-container>
+  
+   
+<!--        
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsNews"></tr> -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsNews;"></tr>
+    </table>
+  </div>
