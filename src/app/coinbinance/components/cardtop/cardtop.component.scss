@@ -1,20 +1,40 @@
-.example-card {
-    min-width: 100px;
-    min-height:100px;
+// .example-card {
+//     min-width: 100px;
+//     min-height:100px;
+//   }
+
+//   .flex-card-container{   
+    
+//     //max-width: 1250px;
+//     min-height:120px;
+//     display:flex;
+//     // display: -webkit-flex;
+//     flex-direction: row; 
+//     overflow-x: auto;
+//     justify-content: center;//space-around;    
+//   }
+  
+//   .flex-card-child{  
+//     flex:1,1,auto;///grow, shrink, basis      
+//   }
+  
+  .wrapper{
+    max-height: 1200px;
+    border: 1px solid cyan;
+    display: flex;
+    overflow-x: auto;
   }
 
-  .flex-card-container{   
-    
-    //max-width: 1250px;
-    min-height:120px;
-    display:flex;
-    // display: -webkit-flex;
-    flex-direction: row; 
-    overflow-x: auto;
-    justify-content: center;//space-around;    
+  .wrapper::-webkit-scrollbar{
+    width: 0;
   }
-  
-  .flex-card-child{  
-    flex:1,1,auto;///grow, shrink, basis      
+
+  .wrapper .item{
+   min-width: 110px;
+   height: 110px;
+   line-height: 110px;
+   text-align: center;
+   background-color: cyan;
+   font-style:italic;
+   margin-right: 2px; 
   }
-  

@@ -1,15 +1,4 @@
-<p>News</p> 
-
-  <!-- <div>
-    <ul *ngFor ="let news of dataSourceNews">     
-        <mat-card >
-          <mat-card-title>{{news.headline}}</mat-card-title>
-          <mat-card-subtitle> <img src="{{news.thumbnail}}" width="100px" height="100px" ></mat-card-subtitle> 
-        </mat-card> 
-    </ul>
-  </div> -->
-
-  <div class="mat-elevation-z8"  >
+  <div class="mat-elevation-z8 maginleft"  >
     <table mat-table [dataSource]="dataSourceNews">     
       <ng-container  matColumnDef="headline">
         <th mat-header-cell *matHeaderCellDef> headline </th>

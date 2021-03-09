@@ -6,14 +6,16 @@ section {
     display:flex;
     flex-direction: column; 
     flex-wrap: wrap;
-    justify-content: space-around;    
+    // justify-content: space-around;
+    justify-content: center;    
   }
 
   .flex-main-container-1{    
     display:flex;
     flex-direction: row; 
     flex-wrap: wrap;
-    justify-content: space-around;    
+    // justify-content: space-around;  
+    justify-content: center;    
   }
 
   .flex-main-item{
@@ -48,7 +50,8 @@ section {
   
   .example-flex-container {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
   }
   
