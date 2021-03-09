@@ -1,12 +1,16 @@
 .example-card {
-    max-width: 35px;
-    max-height:35px;
+    min-width: 100px;
+    min-height:100px;
   }
 
   .flex-card-container{   
+    
+    //max-width: 1250px;
+    min-height:120px;
     display:flex;
+    // display: -webkit-flex;
     flex-direction: row; 
-    flex-wrap: wrap;
+    overflow-x: auto;
     justify-content: center;//space-around;    
   }
   
