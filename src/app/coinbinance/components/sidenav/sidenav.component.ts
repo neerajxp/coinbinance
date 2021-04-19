@@ -109,7 +109,8 @@ export class SidenavComponent implements AfterViewInit
  
   loadcoin(): void
   {
-    const serviceUrl = 'https://coinfn1.azurewebsites.net/api/GetCoinList?code=m/nSeXha7bc8toDseuKYaFBCB56zf96l6XgAx59iRp0gRblFX2kXjA=='; 
+    //const serviceUrl = 'https://coinfn1.azurewebsites.net/api/GetCoinList?code=m/nSeXha7bc8toDseuKYaFBCB56zf96l6XgAx59iRp0gRblFX2kXjA=='; 
+    const serviceUrl = 'https://defidecrypt.com/api/coinlist'; 
   
      this.http
     .get<CoinList>(serviceUrl)

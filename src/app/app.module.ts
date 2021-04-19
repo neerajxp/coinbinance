@@ -10,11 +10,11 @@ import { CoinbinanceAppComponent } from './coinbinance/coinbinance-app.component
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
-// const routes: Routes=
-// [
-//   {path:'coinbinance', loadChildren:()=> import('./coinbinance/coinbinance.module').then(m=>m.CoinbinanceModule)},  
-//   {path:'**', redirectTo:'coinbinance'}
-// ];
+ const routes: Routes=
+ [
+   {path:'coinbinance', loadChildren:()=> import('./coinbinance/coinbinance.module').then(m=>m.CoinbinanceModule)},  
+   {path:'**', redirectTo:'coinbinance'}
+ ];
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     //RouterModule.forRoot(routes),
+    CoinbinanceModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule

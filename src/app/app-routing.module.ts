@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes=
 [
   {path:'coinbinance', loadChildren:()=> import('./coinbinance/coinbinance.module').then(m=>m.CoinbinanceModule)},  
-  {path:'**', redirectTo:'coinbinance'}
+  // {path:'**', redirectTo:'coinbinance'}
 ];
 
 @NgModule({

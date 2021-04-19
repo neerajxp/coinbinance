@@ -56,7 +56,8 @@ export class NewsComponent implements AfterViewInit
 
   loadLatestNews(): void
   {
-    const serviceUrl = 'https://coinfn1.azurewebsites.net/api/GetRSSNewsVerge?code=4rmmtP480deJ7doTLVuzpUBhvFSa5CDzq8ehr2kK15Xj5CMm1d5q4g=='; 
+    //const serviceUrl = 'https://coinfn1.azurewebsites.net/api/GetRSSNewsVerge?code=4rmmtP480deJ7doTLVuzpUBhvFSa5CDzq8ehr2kK15Xj5CMm1d5q4g=='; 
+    const serviceUrl = 'https://defidecrypt.com/api/newsrss'; 
 
     this.http
     .get<NewsModel>(serviceUrl)
