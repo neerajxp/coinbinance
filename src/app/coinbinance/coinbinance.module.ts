@@ -6,9 +6,6 @@ import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { CardtopComponent } from './components/cardtop/cardtop.component';
 import { AdvtopComponent } from './components/advtop/advtop.component';
-import { AdvbottomComponent } from './components/advbottom/advbottom.component';
-import { AdvleftComponent } from './components/advleft/advleft.component';
-import { AdvrightComponent } from './components/advright/advright.component';
 import { CoinlistComponent } from './components/coinlist/coinlist.component';
 import { NewsComponent } from './components/news/news.component';
 import { ApplinkComponent } from './components/applink/applink.component';
@@ -33,7 +30,7 @@ const routes: Routes=
 
 
 @NgModule({
-  declarations: [ CoinbinanceAppComponent, ToolbarComponent, TopmenuComponent, SidemenuComponent, NotificationComponent, CardtopComponent, AdvtopComponent, AdvbottomComponent, AdvleftComponent, AdvrightComponent, CoinlistComponent, NewsComponent, ApplinkComponent, SidebarComponent, SidenavComponent, FooterComponent],
+  declarations: [ CoinbinanceAppComponent, ToolbarComponent, TopmenuComponent, SidemenuComponent, NotificationComponent, CardtopComponent, AdvtopComponent, CoinlistComponent, NewsComponent, ApplinkComponent, SidebarComponent, SidenavComponent, FooterComponent],
   imports: [
     CommonModule, 
     MaterialModule,
