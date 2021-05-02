@@ -3,33 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Routes, RouterModule, RouterState, Router } from '@angular/router';
-import { CoinbinanceModule } from './coinbinance/coinbinance.module';
-import { CoinbinanceAppComponent } from './coinbinance/coinbinance-app.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { from } from 'rxjs';
- const routes: Routes=
- [
-   {path:'coinbinance', loadChildren:()=> import('./coinbinance/coinbinance.module').then(m=>m.CoinbinanceModule)},  
-   {path:'**', redirectTo:'coinbinance'}
- ];
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { LayoutSideModule } from './layouts/layout-side/layout-side.module';
+import { LayoutFullModule } from './layouts/layout-full/layout-full.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //RouterModule.forRoot(routes),
-    CoinbinanceModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule
+    FlexLayoutModule,
+    LayoutSideModule,
+    LayoutFullModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
