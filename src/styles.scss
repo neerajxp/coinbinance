@@ -35,8 +35,16 @@ html {
   padding: 2px;
   height: 34px; 
   background-color:white;
-  vertical-align: bottom;
+  vertical-align: bottom; 
 }
+.container-login-inner {
+    border: solid 3px #ff5733;  // solid none hidden
+    padding: 2px;
+    height: 34px; 
+    background-color:white;
+    vertical-align: bottom;
+    float: right;
+  }
 .container-element {
   border: solid 3px #c70039;
   padding: 10px;
