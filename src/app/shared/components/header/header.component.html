@@ -7,12 +7,13 @@
 	</div> 
   <div class="container" fxFlex="60"> 
 			<!-- <a [routerLink]="['/row-examples']" routerLinkActive="router-link-active">Examples</a> -->
-			<div class="container-toolbar-inner topnav" id="myTopnav">
-				<a href="#home">Home</a>
-				<a href="#news">Trading</a>
+			<div class="container-toolbar-inner topnav" id="myTopnav">				 
+				<a [routerLink]="['row-examples']" routerLinkActive="router-link-active">Home</a>
+				<a [routerLink]="['col-examples']" routerLinkActive="router-link-active">Trading</a>
+				 
 				<a href="#contact">News</a>				 
 				<a href="#about">Tools</a>			 
-			  </div>	
+			  </div>				 
 	</div>  
   
 	<div class="container" fxFlex="20">	 
