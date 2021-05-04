@@ -1,42 +1,33 @@
  <header class="container-outer" fxLayout="row" fxLayoutAlign="space-between center" fxShow.gt-sm fxHide.lt-sm>
-	<div class="container" fxFlex="20">
-		<div class="container-inner">
-			<!-- <a [routerLink]="['']" routerLinkActive="router-link-active">CoinBinance</a> -->
-			<span>CoinBinance</span>
-			
-		</div>
+	<div class="container" fxFlex="6">
+		<div id="qr" style="display:inline-block; min-width:1.2cm; height:1.8cm; text-align : center;vertical-align: middle;" >
+			<img src="assets/icons/cb-logo-2.png" style="height:1.8cm;">
+		  </div>
 	</div>
-	 
-  <div class="container" fxFlex="60"> 
+	<div class="container" fxFlex="20">
+		<div class="container-cb-inner">		 	 
+			CoinBinance			 		
+		</div>	
+	</div>
+  <div class="container" fxFlex="45"> 
 			<!-- <a [routerLink]="['/row-examples']" routerLinkActive="router-link-active">Examples</a> -->
 			<div class="container-toolbar-inner topnav" id="myTopnav">
 				<a href="#home">Home</a>
 				<a href="#news">Trading</a>
 				<a href="#contact">News</a>				 
 				<a href="#about">Tools</a>			 
-			  </div>
-			<!-- <mat-toolbar>
-				<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-					CoinBinance
-				</button>
-				 <span class="example-spacer"></span> 
-			</mat-toolbar> -->
-	 	
+			  </div>	
 	</div>  
-	<div class="container" fxFlex="20">	 
+	<div class="container" fxFlex="16">	 
 		<div class="container-toolbar-inner"> 
 			<input matInput placeholder="Search"> 
-			<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+			<!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
 				<mat-icon>search</mat-icon>
-			</button>
+			</button> -->
 		</div>
 	</div>
-	<div class="container" fxFlex="20">
-		<!-- <div class="container-inner">
-			<a [routerLink]="['/row-examples']" routerLinkActive="router-link-active">Examples</a>
-		</div> -->
-		<div class="container-toolbar-inner">
-		
+	<div class="container" fxFlex="13">	 
+		<div class="container-toolbar-inner">		
 			<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
 				<mat-icon>notifications</mat-icon>
 			</button>
@@ -47,8 +38,7 @@
 			<mat-icon>more_vert</mat-icon>
 			</button>
 		</div>
-	</div>
-	 
+	</div>	 
 </header>
 
 <header class="container-outer" fxLayout="column" fxLayoutAlign="center stretch" fxShow.lt-sm fxHide.lt-xl>

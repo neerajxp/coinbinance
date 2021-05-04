@@ -1,3 +1,22 @@
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.container-cb-inner {
+  border: solid 3px #ff5733;  // solid none hidden
+  padding: 2px;
+  height: 34px; 
+  background-color:white;
+  display:inline-block;
+  vertical-align: middle; 
+  text-align: center;
+  font-size:xx-large;
+}
+
 .example-spacer {
     flex: 1 1 auto;
   }
@@ -117,3 +136,4 @@
     text-align: left;
   }
 }
+
