@@ -11,7 +11,7 @@ import { RatesComponent } from './pages/tools/rates/rates.component';
 
 const routes: Routes = [
   {    
-    path: '',
+    path: 'tools-link',
     component: LayoutToolsComponent,
     children: [
       {
