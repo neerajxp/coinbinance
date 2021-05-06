@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutSideModule } from './layouts/layout-side/layout-side.module';
 import { LayoutFullModule } from './layouts/layout-full/layout-full.module';
-
+import { LayoutToolsModule } from './layouts/layout-tools/layout-tools.module';
+ 
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -15,6 +16,7 @@ import { LayoutFullModule } from './layouts/layout-full/layout-full.module';
     FlexLayoutModule,
     LayoutSideModule,
     LayoutFullModule,
+    LayoutToolsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
