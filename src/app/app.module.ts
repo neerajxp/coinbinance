@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutSideModule } from './layouts/layout-side/layout-side.module';
 import { LayoutFullModule } from './layouts/layout-full/layout-full.module';
-import { LayoutToolsModule } from './layouts/layout-tools/layout-tools.module';
- 
+import { LayoutToolsModule } from './layouts/layout-tools/layout-tools.module'; 
+import { LayoutTradingModule } from './layouts/layout-trading/layout-trading.module';
+import { LayoutHomeModule } from './layouts/layout-home/layout-home.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,6 +18,8 @@ import { LayoutToolsModule } from './layouts/layout-tools/layout-tools.module';
     LayoutSideModule,
     LayoutFullModule,
     LayoutToolsModule,
+    LayoutHomeModule,
+    LayoutTradingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

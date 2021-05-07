@@ -8,6 +8,10 @@ import { ColExampleComponent } from './pages/col-example/col-example.component';
 import { LayoutToolsComponent } from './layouts/layout-tools/layout-tools.component';
 import { SidemenuComponent } from 'old_backup/src/app/coinbinance/components/sidemenu/sidemenu.component';
 import { RatesComponent } from './pages/tools/rates/rates.component';
+import { Menu2Component } from './pages/tools/menu2/menu2.component';
+import { LayoutTradingComponent } from './layouts/layout-trading/layout-trading.component';
+import { LayoutHomeComponent } from './layouts/layout-home/layout-home.component';
+import { DashboardComponent } from './pages/trading/dashboard/dashboard.component';
 
 const routes: Routes = [
   {    
@@ -39,16 +43,55 @@ const routes: Routes = [
     component: LayoutToolsComponent,
     children: [
       {
-        path: 'tools-link',
+        path: 'tools',
         component: SidemenuComponent,
       },
       {
-        path: 'rates-link',
+        path: 'rates',
         component: RatesComponent,
+      },
+      {
+        path: 'menu2',
+        component: Menu2Component,
       },
     ],
   },
-  
+  {    
+    path: '',
+    component: LayoutTradingComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+      {
+        path: 'rates',
+        component: RatesComponent,
+      },
+      {
+        path: 'menu2',
+        component: Menu2Component,
+      },
+    ],
+  },
+  {    
+    path: '',
+    component: LayoutHomeComponent,
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: 'rates',
+        component: RatesComponent,
+      },
+      {
+        path: 'menu2',
+        component: Menu2Component,
+      },
+    ],
+  },
 ];
 
 @NgModule({
