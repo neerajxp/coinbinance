@@ -11,16 +11,6 @@ import { RatesComponent } from './pages/tools/rates/rates.component';
 
 const routes: Routes = [
   {    
-    path: 'tools-link',
-    component: LayoutToolsComponent,
-    children: [
-      {
-        path: '',
-        component: RatesComponent,
-      },
-    ],
-  },
-  {    
     path: '',
     component: LayoutFullComponent,
     children: [
@@ -44,6 +34,21 @@ const routes: Routes = [
       },
     ],
   },  
+  {    
+    path: '',
+    component: LayoutToolsComponent,
+    children: [
+      {
+        path: 'tools-link',
+        component: SidemenuComponent,
+      },
+      {
+        path: 'rates-link',
+        component: RatesComponent,
+      },
+    ],
+  },
+  
 ];
 
 @NgModule({
