@@ -1,7 +1,5 @@
 <app-header></app-header>
 
-
-
 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between start" fxLayoutAlign.lt-md="start stretch">
 	<div class=" container-outer" fxFlex="15" fxFlex.md="15">		  
 		  <app-home></app-home>
@@ -10,17 +8,19 @@
 		<router-outlet></router-outlet>
 	</div> 
 	<div class=" container-outer" fxFlex="25" fxFlex.md="30">		
-		<div fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="space-between start" fxLayoutAlign.lt-md="start stretch">
-			<div class=" container-outer" fxFlex="20" fxFlex.md="15">
-				<app-news></app-news>
-			</div>
+		<div fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="space-between start" fxLayoutAlign.lt-md="start stretch">			
 			<div class=" container-outer" fxFlex="20" fxFlex.md="15">
 				<app-coinwatch></app-coinwatch>
-			</div>
-			
-		</div>  
-		
+			</div>	
+			<div class=" container-outer" fxFlex="20" fxFlex.md="15">
+				<app-news></app-news>
+			</div>		
+		</div>  		
   </div>
 </div>
  
 <app-footer></app-footer>
+
+
+ 
+ 
