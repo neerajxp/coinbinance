@@ -8,8 +8,9 @@ import { LayoutFullModule } from './layouts/layout-full/layout-full.module';
 import { LayoutToolsModule } from './layouts/layout-tools/layout-tools.module'; 
 import { LayoutTradingModule } from './layouts/layout-trading/layout-trading.module';
 import { LayoutHomeModule } from './layouts/layout-home/layout-home.module';
+import { PortfoliototalComponent } from './pages/tools/portfoliototal/portfoliototal.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PortfoliototalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

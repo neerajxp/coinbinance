@@ -13,6 +13,7 @@ import { LayoutTradingComponent } from './layouts/layout-trading/layout-trading.
 import { LayoutHomeComponent } from './layouts/layout-home/layout-home.component';
 import { DashboardComponent } from './pages/trading/dashboard/dashboard.component';
 import { CoinlistComponent } from './pages/home/coinlist/coinlist.component'
+import { PortfoliototalComponent } from './pages/tools/portfoliototal/portfoliototal.component';
 
 
 const routes: Routes = [
@@ -72,8 +73,8 @@ const routes: Routes = [
         component: RatesComponent,
       },
       {
-        path: 'menu2',
-        component: Menu2Component,
+        path: 'portfoliototal',
+        component: PortfoliototalComponent,
       },
     ],
   },
