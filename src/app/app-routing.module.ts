@@ -6,39 +6,68 @@ import { LayoutSideComponent } from './layouts/layout-side/layout-side.component
 import { RowExampleComponent } from './pages/row-example/row-example.component';
 import { ColExampleComponent } from './pages/col-example/col-example.component';
 import { LayoutToolsComponent } from './layouts/layout-tools/layout-tools.component';
-import { SidemenuComponent } from 'old_backup/src/app/coinbinance/components/sidemenu/sidemenu.component';
+import { SidemenuComponent } from './pages/tools/sidemenu/sidemenu.component';
 import { RatesComponent } from './pages/tools/rates/rates.component';
 import { Menu2Component } from './pages/tools/menu2/menu2.component';
 import { LayoutTradingComponent } from './layouts/layout-trading/layout-trading.component';
 import { LayoutHomeComponent } from './layouts/layout-home/layout-home.component';
 import { DashboardComponent } from './pages/trading/dashboard/dashboard.component';
-import { CoinlistComponent } from 'old_backup/src/app/coinbinance/components/coinlist/coinlist.component';
+import { CoinlistComponent } from './pages/home/coinlist/coinlist.component'
+
 
 const routes: Routes = [
-  {    
+  // {    
+  //   path: '',
+  //   component: LayoutFullComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: HomeComponent,
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: '',
+  //   component: LayoutSideComponent,
+  //   children: [
+  //     {
+  //       path: 'row-examples',
+  //       component: RowExampleComponent,
+  //     },
+  //     {
+  //       path: 'col-examples',
+  //       component: ColExampleComponent,
+  //     },
+  //   ],
+  // },  
+   {    
     path: '',
-    component: LayoutFullComponent,
+    component: LayoutHomeComponent,
     children: [
       {
         path: '',
-        component: HomeComponent,
+        component: CoinlistComponent,
       },
     ],
   },
-  {
+  {    
     path: '',
-    component: LayoutSideComponent,
+    component: LayoutHomeComponent,
     children: [
       {
-        path: 'row-examples',
-        component: RowExampleComponent,
+        path: 'home',
+        component: CoinlistComponent,
       },
       {
-        path: 'col-examples',
-        component: ColExampleComponent,
+        path: 'rates',
+        component: RatesComponent,
+      },
+      {
+        path: 'menu2',
+        component: Menu2Component,
       },
     ],
-  },  
+  },
   {    
     path: '',
     component: LayoutToolsComponent,
@@ -75,24 +104,7 @@ const routes: Routes = [
       },
     ],
   },
-  {    
-    path: '',
-    component: LayoutHomeComponent,
-    children: [
-      {
-        path: 'home',
-        component: CoinlistComponent,
-      },
-      {
-        path: 'rates',
-        component: RatesComponent,
-      },
-      {
-        path: 'menu2',
-        component: Menu2Component,
-      },
-    ],
-  },
+  
 ];
 
 @NgModule({
