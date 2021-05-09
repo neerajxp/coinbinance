@@ -2,12 +2,13 @@
 
 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between start" fxLayoutAlign.lt-md="start stretch">
 	<div class=" container-outer" fxFlex="5" fxFlex.md="15">		  
-		  <app-home></app-home>
+		   <app-home></app-home> 
 	</div>
 	<div class="content container-outer" fxFlex="70" fxFlex.md="55">
-		<router-outlet></router-outlet>
+		<!-- <router-outlet></router-outlet> -->
+		<app-coinlist></app-coinlist>
 	</div> 
-	<div class=" container-outer" fxFlex="35" fxFlex.md="25">		
+	<div class=" container-outer" fxFlex="25" fxFlex.md="25">		
 		<div fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="space-between start" fxLayoutAlign.lt-md="start stretch">
 			<div class=" container-outer" fxFlex="20" fxFlex.md="15">
 				<app-announcement></app-announcement>

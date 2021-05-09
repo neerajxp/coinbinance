@@ -40,23 +40,14 @@ const routes: Routes = [
   //     },
   //   ],
   // },  
-   {    
-    path: '',
-    component: LayoutHomeComponent,
-    children: [
-      {
-        path: '',
-        component: CoinlistComponent,
-      },
-    ],
-  },
+    
   {    
     path: '',
     component: LayoutHomeComponent,
     children: [
       {
         path: 'home',
-        component: CoinlistComponent,
+        component: HomeComponent,
       },
       {
         path: 'rates',
