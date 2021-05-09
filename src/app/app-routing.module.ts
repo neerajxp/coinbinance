@@ -12,6 +12,7 @@ import { Menu2Component } from './pages/tools/menu2/menu2.component';
 import { LayoutTradingComponent } from './layouts/layout-trading/layout-trading.component';
 import { LayoutHomeComponent } from './layouts/layout-home/layout-home.component';
 import { DashboardComponent } from './pages/trading/dashboard/dashboard.component';
+import { CoinlistComponent } from 'old_backup/src/app/coinbinance/components/coinlist/coinlist.component';
 
 const routes: Routes = [
   {    
@@ -80,7 +81,7 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        component: HomeComponent,
+        component: CoinlistComponent,
       },
       {
         path: 'rates',
