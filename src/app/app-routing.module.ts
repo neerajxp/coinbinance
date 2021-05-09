@@ -68,7 +68,7 @@ const routes: Routes = [
         component: SidemenuComponent,
       },
       {
-        path: 'rates',
+        path: 'maxrates',
         component: RatesComponent,
       },
       {
