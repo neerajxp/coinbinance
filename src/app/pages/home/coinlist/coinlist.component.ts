@@ -1,25 +1,14 @@
 import {AfterViewInit, Component,OnInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator'; 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MatTableDataSource } from '@angular/material/table';
 import {MatSort} from '@angular/material/sort'; 
+import { CoinList } from 'src/app/shared/model/coinlist'; 
+import { map } from 'rxjs/operators';  
+import * as xml2js from 'xml2js';
+import { Observable, of }   from 'rxjs';
 
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  color: string;
-}
-
-/** Constants used to fill up our data base. */
-const COLORS: string[] = [
-  'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
-  'aqua', 'blue', 'navy', 'black', 'gray'
-];
-const NAMES: string[] = [
-  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
-  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
-];
-
+const ELEMENT_DATA_COINS: CoinList[] = [];
 
 @Component({
   selector: 'app-coinlist',
@@ -27,25 +16,59 @@ const NAMES: string[] = [
   styleUrls: ['./coinlist.component.scss']
 })
  
-export class CoinlistComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
-  dataSource: MatTableDataSource<UserData>;
-
+export class CoinlistComponent implements AfterViewInit 
+{
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+  dataSource = new MatTableDataSource<CoinList>(ELEMENT_DATA_COINS); 
 
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+  displayedColumns: string[] = ['name', 'symbol', 'price', "percent_change_24h"];
+
+  constructor(
+      private http: HttpClient) {
+    
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.loadcoin();
   }
+ 
+  loadcoin(): void
+  {
+    //const serviceUrl = 'https://coinfn1.azurewebsites.net/api/GetCoinList?code=m/nSeXha7bc8toDseuKYaFBCB56zf96l6XgAx59iRp0gRblFX2kXjA=='; 
+    const serviceUrl = 'https://defidecrypt.com/api/coinlist'; 
+
+    this.http
+    .get<CoinList>(serviceUrl)
+    .pipe(
+      map((data:any)=>
+        data.map(
+          (item:any)=>
+          new CoinList(
+              item.source, 
+              item.id, 
+              item.name, 
+              item.symbol, 
+              item.price, 
+              item.last_updated,
+              item.volume_24h, 
+              item.percent_change_1h, 
+              item.percent_change_24h,
+              item.percent_change_7d, 
+              item.percent_change_30d, 
+              item.market_cap, 
+              item.rank)
+        )
+      )
+    ).subscribe(data=>{
+      this.dataSource=data;
+      console.log(data);
+    })     
+  }
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -55,17 +78,6 @@ export class CoinlistComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
 
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
-}
+ 

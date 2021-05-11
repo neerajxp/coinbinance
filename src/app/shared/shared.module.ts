@@ -4,9 +4,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { RouterModule } from '@angular/router';
-import { MaterialModule } from 'old_backup/src/app/shared/material.module'; 
+import { RouterModule } from '@angular/router'; 
 import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './modules/material.module';
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent, SidebarComponent],
