@@ -9,11 +9,14 @@ import { LayoutToolsComponent } from './layouts/layout-tools/layout-tools.compon
 import { SidemenuComponent } from './pages/tools/sidemenu/sidemenu.component';
 import { RatesComponent } from './pages/tools/rates/rates.component';
 import { Menu2Component } from './pages/tools/menu2/menu2.component';
-import { LayoutTradingComponent } from './layouts/layout-trading/layout-trading.component';
+import { LayoutTradingComponent } from './layouts/layout-trading/layout-trading.component'; 
 import { LayoutHomeComponent } from './layouts/layout-home/layout-home.component';
 import { DashboardComponent } from './pages/trading/dashboard/dashboard.component';
 import { CoinlistComponent } from './pages/home/coinlist/coinlist.component'
 import { PortfoliototalComponent } from './pages/tools/portfoliototal/portfoliototal.component';
+import { LayoutLearnComponent } from './layouts/layout-learn/layout-learn.component';
+import { BlogComponent } from './pages/learn/blog/blog.component';
+import { HowtoComponent } from './pages/learn/howto/howto.component';
 
 
 const routes: Routes = [
@@ -96,7 +99,24 @@ const routes: Routes = [
       },
     ],
   },
-  
+  {    
+    path: 'learn',
+    component: LayoutLearnComponent,
+    children: [
+      {
+        path: '',
+        component: BlogComponent,
+      },
+      {
+        path: 'blog',
+        component: BlogComponent,
+      },    
+      {
+        path: 'howto',
+        component: HowtoComponent,
+      },      
+    ],
+  },
 ];
 
 @NgModule({

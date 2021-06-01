@@ -7,10 +7,14 @@ import { LayoutSideModule } from './layouts/layout-side/layout-side.module';
 import { LayoutFullModule } from './layouts/layout-full/layout-full.module';
 import { LayoutToolsModule } from './layouts/layout-tools/layout-tools.module'; 
 import { LayoutTradingModule } from './layouts/layout-trading/layout-trading.module';
-import { LayoutHomeModule } from './layouts/layout-home/layout-home.module';
+import { LayoutHomeModule } from './layouts/layout-home/layout-home.module'; 
 import { PortfoliototalComponent } from './pages/tools/portfoliototal/portfoliototal.component';
+import { from } from 'rxjs';
+import { LayoutLearnModule } from './layouts/layout-learn/layout-learn.module';
+import { BlogComponent } from './pages/learn/blog/blog.component';
+import { HowtoComponent } from './pages/learn/howto/howto.component';
 @NgModule({
-  declarations: [AppComponent, PortfoliototalComponent],
+  declarations: [AppComponent, PortfoliototalComponent, HowtoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,7 +23,8 @@ import { PortfoliototalComponent } from './pages/tools/portfoliototal/portfoliot
     LayoutFullModule,
     LayoutToolsModule,
     LayoutHomeModule,
-    LayoutTradingModule
+    LayoutTradingModule,
+    LayoutLearnModule
   ],
   providers: [],
   bootstrap: [AppComponent],
