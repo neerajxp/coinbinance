@@ -10,9 +10,10 @@ import { LayoutTradingModule } from './layouts/layout-trading/layout-trading.mod
 import { LayoutHomeModule } from './layouts/layout-home/layout-home.module'; 
 import { PortfoliototalComponent } from './pages/tools/portfoliototal/portfoliototal.component';
 import { from } from 'rxjs';
-import { LayoutLearnModule } from './layouts/layout-learn/layout-learn.module';
+import { LayoutLearnModule } from './layouts/layout-learn/layout-learn.module'; 
 import { BlogComponent } from './pages/learn/blog/blog.component';
 import { HowtoComponent } from './pages/learn/howto/howto.component';
+import { LayoutKinuModule } from './layouts/layout-kinu/layout-kinu.module';
 @NgModule({
   declarations: [AppComponent, PortfoliototalComponent, HowtoComponent],
   imports: [
@@ -24,7 +25,8 @@ import { HowtoComponent } from './pages/learn/howto/howto.component';
     LayoutToolsModule,
     LayoutHomeModule,
     LayoutTradingModule,
-    LayoutLearnModule
+    LayoutLearnModule,
+    LayoutKinuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

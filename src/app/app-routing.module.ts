@@ -17,6 +17,7 @@ import { PortfoliototalComponent } from './pages/tools/portfoliototal/portfoliot
 import { LayoutLearnComponent } from './layouts/layout-learn/layout-learn.component';
 import { BlogComponent } from './pages/learn/blog/blog.component';
 import { HowtoComponent } from './pages/learn/howto/howto.component';
+import { LayoutKinuComponent } from './layouts/layout-kinu/layout-kinu.component';
 
 
 const routes: Routes = [
@@ -102,6 +103,24 @@ const routes: Routes = [
   {    
     path: 'learn',
     component: LayoutLearnComponent,
+    children: [
+      {
+        path: '',
+        component: BlogComponent,
+      },
+      {
+        path: 'blog',
+        component: BlogComponent,
+      },    
+      {
+        path: 'howto',
+        component: HowtoComponent,
+      },      
+    ],
+  },
+  {    
+    path: 'kinu',
+    component: LayoutKinuComponent,
     children: [
       {
         path: '',

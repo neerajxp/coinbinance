@@ -8,10 +8,11 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './modules/material.module';
 import { HeaderlearnComponent } from './components/headerlearn/headerlearn.component';
+import { HeaderKinuComponent } from './components/header-kinu/header-kinu.component';
 
 @NgModule({
-  declarations: [FooterComponent, HeaderComponent, SidebarComponent, HeaderlearnComponent],
+  declarations: [FooterComponent, HeaderComponent, SidebarComponent, HeaderlearnComponent,HeaderKinuComponent, HeaderKinuComponent],
   imports: [CommonModule, FlexLayoutModule, RouterModule, MaterialModule, HttpClientModule],
-  exports: [FooterComponent, HeaderComponent, SidebarComponent, HeaderlearnComponent],
+  exports: [FooterComponent, HeaderComponent, SidebarComponent, HeaderlearnComponent, HeaderKinuComponent],
 })
 export class SharedModule {}
