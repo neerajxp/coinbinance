@@ -6,7 +6,8 @@
 
 /* Global Styles */
 body{
-  font-family: Antonio,Roboto, Arial, sans-serif;
+ // font-family: Antonio,Roboto, Arial, sans-serif;
+ font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   margin: 0;
   padding: 0px;
 }
@@ -15,10 +16,12 @@ html {
   margin: 0px;
   padding: 0px;
 }
+
 .content {
-  // background-color: #eee;
-  background-color: rgba(231, 201, 201, 0.151);
+ // background-color: rgba(231, 201, 201, 0.151);
+ background-color: rgb(255, 255, 255);
 }
+
 .container-outer {
   border: solid  3px #ffc300;  // solid none hidden
   padding: 10px;
@@ -69,3 +72,4 @@ html {
 .height250 {
   height: 250px;
 }
+ 
