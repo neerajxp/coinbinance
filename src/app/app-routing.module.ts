@@ -26,7 +26,7 @@ const routes: Routes = [
    { path: 'tools', component: LayoutToolsComponent, children:[{path:'maxrates', component:RatesComponent },{path:'portfoliototal', component:PortfoliototalComponent }]},
  
    { path: 'kinu', component: LayoutLearnComponent, children:[{path:'blog', component:BlogComponent}
-    , {path:'blog/for-here-or-to-go', component:ACryptoForHereComponent}]},
+    , {path:'blog/cryptocurrency-for-here-or-to-go', component:ACryptoForHereComponent}]},
 
   //  { path: 'kinu/blog/forhere', component: ACryptoForHereComponent},
    
