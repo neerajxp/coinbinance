@@ -18,124 +18,128 @@ import { LayoutLearnComponent } from './layouts/layout-learn/layout-learn.compon
 import { BlogComponent } from './pages/learn/blog/blog.component';
 import { HowtoComponent } from './pages/learn/howto/howto.component';
 import { LayoutKinuComponent } from './layouts/layout-kinu/layout-kinu.component';
+import { ACryptoForHereComponent } from './pages/kinu/blog/a-crypto-for-here/a-crypto-for-here.component';
 
 
 const routes: Routes = [
-  // {    
-  //   path: '',
-  //   component: LayoutFullComponent,
+   { path: '', component: LayoutHomeComponent},
+   { path: 'tools', component: LayoutToolsComponent, children:[{path:'maxrates', component:RatesComponent },{path:'portfoliototal', component:PortfoliototalComponent }]},
+ 
+   { path: 'kinu', component: LayoutLearnComponent, children:[{path:'blog', component:BlogComponent}
+    , {path:'blog/for-here-or-to-go', component:ACryptoForHereComponent}]},
+
+  //  { path: 'kinu/blog/forhere', component: ACryptoForHereComponent},
+   
+  //  { path: 'kinu/blog', component: ACryptoForHereComponent},
+  
+  //   path: 'kinu',
+  //   component: LayoutKinuComponent,
   //   children: [
   //     {
   //       path: '',
+  //       component: BlogComponent,
+  //     },
+  //     {
+  //       path: 'blog',
+  //       component: BlogComponent,
+  //     },    
+  //     {
+  //       path: 'howto',
+  //       component: HowtoComponent,
+  //     },      
+  //   ],
+  // },
+
+  // {    
+  //   path: '',
+  //   component: LayoutHomeComponent,
+  //   children: [
+  //     {
+  //       path: 'home',
   //       component: HomeComponent,
+  //     },
+  //     {
+  //       path: 'rates',
+  //       component: RatesComponent,
+  //     },
+  //     {
+  //       path: 'menu2',
+  //       component: Menu2Component,
   //     },
   //   ],
   // },
-  // {
+  // {    
   //   path: '',
-  //   component: LayoutSideComponent,
+  //   component: LayoutToolsComponent,
   //   children: [
   //     {
-  //       path: 'row-examples',
-  //       component: RowExampleComponent,
+  //       path: 'tools',
+  //       component: SidemenuComponent,
   //     },
   //     {
-  //       path: 'col-examples',
-  //       component: ColExampleComponent,
+  //       path: 'maxrates',
+  //       component: RatesComponent,
+  //     },
+  //     {
+  //       path: 'portfoliototal',
+  //       component: PortfoliototalComponent,
   //     },
   //   ],
-  // },  
-    
-  {    
-    path: '',
-    component: LayoutHomeComponent,
-    children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        path: 'rates',
-        component: RatesComponent,
-      },
-      {
-        path: 'menu2',
-        component: Menu2Component,
-      },
-    ],
-  },
-  {    
-    path: '',
-    component: LayoutToolsComponent,
-    children: [
-      {
-        path: 'tools',
-        component: SidemenuComponent,
-      },
-      {
-        path: 'maxrates',
-        component: RatesComponent,
-      },
-      {
-        path: 'portfoliototal',
-        component: PortfoliototalComponent,
-      },
-    ],
-  },
-  {    
-    path: '',
-    component: LayoutTradingComponent,
-    children: [
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-      },
-      {
-        path: 'rates',
-        component: RatesComponent,
-      },
-      {
-        path: 'menu2',
-        component: Menu2Component,
-      },
-    ],
-  },
-  {    
-    path: 'learn',
-    component: LayoutLearnComponent,
-    children: [
-      {
-        path: '',
-        component: BlogComponent,
-      },
-      {
-        path: 'blog',
-        component: BlogComponent,
-      },    
-      {
-        path: 'howto',
-        component: HowtoComponent,
-      },      
-    ],
-  },
-  {    
-    path: 'kinu',
-    component: LayoutKinuComponent,
-    children: [
-      {
-        path: '',
-        component: BlogComponent,
-      },
-      {
-        path: 'blog',
-        component: BlogComponent,
-      },    
-      {
-        path: 'howto',
-        component: HowtoComponent,
-      },      
-    ],
-  },
+  // },
+  // {    
+  //   path: '',
+  //   component: LayoutTradingComponent,
+  //   children: [
+  //     {
+  //       path: 'dashboard',
+  //       component: DashboardComponent,
+  //     },
+  //     {
+  //       path: 'rates',
+  //       component: RatesComponent,
+  //     },
+  //     {
+  //       path: 'menu2',
+  //       component: Menu2Component,
+  //     },
+  //   ],
+  // },
+  // {    
+  //   path: 'learn',
+  //   component: LayoutLearnComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: BlogComponent,
+  //     },
+  //     {
+  //       path: 'blog',
+  //       component: BlogComponent,
+  //     },    
+  //     {
+  //       path: 'howto',
+  //       component: HowtoComponent,
+  //     },      
+  //   ],
+  // },
+  // {    
+  //   path: 'kinu',
+  //   component: LayoutKinuComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: BlogComponent,
+  //     },
+  //     {
+  //       path: 'blog',
+  //       component: BlogComponent,
+  //     },    
+  //     {
+  //       path: 'howto',
+  //       component: HowtoComponent,
+  //     },      
+  //   ],
+  // },
 ];
 
 @NgModule({

@@ -23,26 +23,26 @@ html {
 }
 
 .container-outer {
-  border: none  3px #ffc300;  // solid none hidden
+  border: solid  3px #ffc300;  // solid none hidden
   padding: 10px;
 }
 .container {
-  border: none 3px #900c3f;  // solid none hidden
+  border: solid 3px #900c3f;  // solid none hidden
   padding: 10px;
 }
 .container-inner {
-  border: none 3px #ff5733;  // solid none hidden
+  border: solid 3px #ff5733;  // solid none hidden
   padding: 10px;
 }
 .container-toolbar-inner {
-  border: none 3px #ff5733;  // solid none hidden
+  border: solid 3px #ff5733;  // solid none hidden
   padding: 2px;
   height: 34px; 
   background-color:white;
   vertical-align: bottom;  
 }
 .container-login-inner {
-    border: none 3px #ff5733;  // solid none hidden
+    border: solid 3px #ff5733;  // solid none hidden
     padding: 2px;
     height: 34px; 
     background-color:white;
