@@ -1,0 +1,24 @@
+<app-headerlearn></app-headerlearn>
+	<!-- fxFlex="100" - default to 100% width 
+	fxFlex.sm="50" - on small screens, use 50% width
+	fxFlex.md="60" - on medium screens, use 60 % width
+	fxFlex.lg="70" - on Large screens, use 70% width 
+	fxFlex.gt-lg="80" - on Anything greater than a large screen use 80% width-->
+
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between start" fxLayoutAlign.lt-md="start stretch">
+	<div class="container-outer" fxFlex="15" fxFlex.md="5" fxFlex.sm="1">		  
+		 <!-- <app-home></app-home>  -->
+		   <p></p>
+	</div>
+	<div class="content container-outer" fxFlex="70" fxFlex.md="90"  fxFlex.sm="98">
+	  <router-outlet></router-outlet>   
+	 <!-- <app-a-crypto-for-here></app-a-crypto-for-here> -->
+		<!-- <app-coinlist></app-coinlist> -->
+	</div> 
+	<div class=" container-outer" fxFlex="20" fxFlex.md="5"  fxFlex.sm="1">		
+
+		<p></p>
+  </div>
+</div> 
+
+<app-footer></app-footer>
