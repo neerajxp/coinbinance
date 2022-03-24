@@ -14,6 +14,7 @@ import { LayoutLearnModule } from './layouts/layout-learn/layout-learn.module';
 import { BlogComponent } from './pages/learn/blog/blog.component';
 import { HowtoComponent } from './pages/learn/howto/howto.component';
 import { LayoutKinuModule } from './layouts/layout-kinu/layout-kinu.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent, PortfoliototalComponent, HowtoComponent],
   imports: [
@@ -26,7 +27,8 @@ import { LayoutKinuModule } from './layouts/layout-kinu/layout-kinu.module';
     LayoutHomeModule,
     LayoutTradingModule,
     LayoutLearnModule,
-    LayoutKinuModule
+    LayoutKinuModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

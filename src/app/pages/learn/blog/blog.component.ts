@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Console } from 'console';
+
 
 @Component({
   selector: 'app-blog',
@@ -25,7 +25,7 @@ export class BlogComponent implements OnInit {
             this.projectDescription = data;
         })
    
-        console.log(this.projectDescription);
+       
   }
 
 }
